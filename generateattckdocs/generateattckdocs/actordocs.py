@@ -2,7 +2,6 @@ import os
 
 from .attckdocs import AttckDocs
 
-
 class ActorDocs(AttckDocs):
 
     def __init__(self, folder):
@@ -13,7 +12,6 @@ class ActorDocs(AttckDocs):
             os.mkdir(os.path.join(self.folder, 'actors'))
 
         self.folder = os.path.join(self.folder, 'actors')
-
 
     def go(self):
         for actor in self._attck.enterprise.actors:
@@ -110,8 +108,6 @@ class ActorDocs(AttckDocs):
 {technique_list}
 '''.format(technique_list=technique_list)
 
-
-
             malware_list = None
             for malware in actor.malwares:
                 if malware_list is None:
@@ -128,7 +124,6 @@ class ActorDocs(AttckDocs):
 
 {malware_list}
 '''.format(malware_list=malware_list)
-
 
             tools_list = None
             for tool in actor.tools:

@@ -123,8 +123,6 @@ for tool in attack.enterprise.tools:
         print(actor.id)
         print(actor.name)
 
-
-
 # Examples of MITRE PRE-ATT&CK 
 
 for actor in attack.preattack.actors:
@@ -136,7 +134,6 @@ for actor in attack.preattack.actors:
         print(technique.id)
         print(technique.name)
 
-
 # accessing tactics
 for tactic in attack.preattack.tactics:
     print(tactic.id)
@@ -146,7 +143,6 @@ for tactic in attack.preattack.tactics:
     for technique in tactic.techniques:
         print(technique.id)
         print(technique.name)
-
 
 # accessing techniques
 for technique in attack.preattack.techniques:
@@ -162,7 +158,6 @@ for technique in attack.preattack.techniques:
     for actor in technique.actors:
         print(actor.id)
         print(actor.name)
-
 
 # Examples of MITRE Mobile ATT&CK
 

@@ -1,5 +1,4 @@
 
-
 class PreAttckObject(object):
     '''
         Parent class of all other MITRE PRE-ATT&CK based classes
@@ -24,7 +23,6 @@ class PreAttckObject(object):
         self.created = self._set_attribute(kwargs, 'created')
         self.modified = self._set_attribute(kwargs, 'modified')
         self.type = self._set_attribute(kwargs, 'type')
-
 
     def __str__(self):
         return_dict = {}
@@ -73,7 +71,6 @@ class PreAttckObject(object):
                 return_list.append(item)
         return return_list
 
-
     def _set_attribute(self, obj, name):
         """Parent class method to set attribute based on passed in object
            and the name of the property
@@ -90,7 +87,6 @@ class PreAttckObject(object):
             return None if not value else value
         except:
             return None
-
 
     def _set_list_items(self, obj, list_name):
         """Private method used by child classes and normalizes list items
@@ -122,7 +118,6 @@ class PreAttckObject(object):
                 if p.get('source_name') == 'mitre-pre-attack' or p.get('source_name') == 'mitre-attack':
                     return p.get('external_id')
 
-
     def _set_wiki(self, obj):
         """Returns the MITRE ATT&CK Framework Wiki URL
 
@@ -136,7 +131,6 @@ class PreAttckObject(object):
             for p in obj['external_references']:
                 if p.get('source_name') == 'mitre-pre-attack' or p.get('source_name') == 'mitre-attack':
                     return p.get('url')
-
 
     def _set_reference(self, obj):
         """Returns a list of external references from the provided MITRE PRE-ATT&CK Framework json object

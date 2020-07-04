@@ -1,7 +1,6 @@
 import yaml
 import os
 
-
 class Configuration(object):
 
     """
@@ -58,7 +57,6 @@ class Configuration(object):
         else:
             config['enterprise_attck_json'] = os.path.join(os.path.expanduser('~'), 'pyattck', 'enterprise_attck' + '.json')
 
-
         if preattck_json_path:
             if '.json' not in preattck_json_path:
                 config['preattck_json'] = '{}/preattack.json'.format(self.__get_absolute_path(preattck_json_path))
@@ -66,7 +64,6 @@ class Configuration(object):
                 config['preattck_json'] = self.__get_absolute_path(preattck_json_path)
         else:
             config['preattck_json'] = os.path.join(os.path.expanduser('~'), 'pyattck', 'preattck' + '.json')
-
 
         if mobile_attck_json_path:
             if '.json' not in mobile_attck_json_path:
@@ -76,7 +73,6 @@ class Configuration(object):
         else:
             config['mobile_attck_json'] = os.path.join(os.path.expanduser('~'), 'pyattck', 'mobile_attck' + '.json')
 
-
         if enterprise_attck_dataset_path:
             if '.json' not in enterprise_attck_dataset_path:
                 config['enterprise_attck_dataset'] = '{}/enterprise_attck_dataset.json'.format(self.__get_absolute_path(enterprise_attck_dataset_path))
@@ -84,7 +80,6 @@ class Configuration(object):
                 config['enterprise_attck_dataset'] = self.__get_absolute_path(enterprise_attck_dataset_path)
         else:
             config['enterprise_attck_dataset'] = os.path.join(os.path.expanduser('~'), 'pyattck', 'enterprise_attck_dataset' + '.json')
-
 
         self.__write_config(config)
 

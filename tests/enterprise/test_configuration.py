@@ -3,7 +3,6 @@ import os
 import yaml
 from os.path import expanduser
 
-
 def test_config_in_default_location():
     from pyattck import Attck
     Attck()

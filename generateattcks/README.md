@@ -91,11 +91,9 @@ This generated json file has the following main keys:
         - UI
         - Linux
 
-
 ## Generated Attck Data Structure
 
 The [generated_attck_data.json](https://raw.githubusercontent.com/swimlane/pyattck/master/generated_attck_data.json) has the following base structure. This is purely an example and contains modified/fake data.
-
 
 ```json
 

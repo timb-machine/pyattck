@@ -1,7 +1,6 @@
 import markdown, codecs, re
 import collections
 
-
 class MarkdownTable(object):
 
     def __init__(self, file_path=None, raw_content=None):
@@ -16,7 +15,6 @@ class MarkdownTable(object):
         self.row_list = []
         self.column_list = self.columns()
         self.column_dict = collections.OrderedDict()
-
 
     def columns(self):
         column_list = []

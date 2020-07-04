@@ -4,7 +4,6 @@ from github import Github
 from .githubcontroller import GitHubController
 from .attacktemplate import AttackTemplate
 
-
 class ElementalAttack(GitHubController):
     """
     Data Source: https://github.com/Elemental-attack/Elemental
@@ -40,7 +39,6 @@ class ElementalAttack(GitHubController):
                         return_list.append(self.__get_attack_template(content))
         return return_list
 
-
     def __get_attack_template(self, return_list):
         template = AttackTemplate()
         technique_id = None
@@ -57,7 +55,6 @@ class ElementalAttack(GitHubController):
             if technique_id:
                 template.add_detection_data_sources(item)
         return template.get()
-
 
     def __download_content(self, url):
         return_list = []

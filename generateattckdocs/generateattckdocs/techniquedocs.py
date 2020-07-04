@@ -4,7 +4,6 @@ import pprint
 
 from .attckdocs import AttckDocs
 
-
 class TechniqueDocs(AttckDocs):
 
     def __init__(self, folder):
@@ -15,7 +14,6 @@ class TechniqueDocs(AttckDocs):
             os.mkdir(os.path.join(self.folder, 'techniques'))
 
         self.folder = os.path.join(self.folder, 'techniques')
-
 
     def go(self):
         for technique in self._attck.enterprise.techniques:
@@ -147,7 +145,6 @@ class TechniqueDocs(AttckDocs):
 {tactic_list}
 '''.format(tactic_list=tactic_list)
 
-
             mitigation_list = None
             for mitigation in technique.mitigations:
                 if mitigation_list is None:
@@ -164,8 +161,6 @@ class TechniqueDocs(AttckDocs):
 
 {mitigation_list}
 '''.format(mitigation_list=mitigation_list)
-
-
 
             actors_list = None
             for actor in technique.actors:

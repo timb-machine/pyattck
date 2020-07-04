@@ -2,7 +2,6 @@ import os
 
 from .attckdocs import AttckDocs
 
-
 class MitigationDocs(AttckDocs):
 
     def __init__(self, folder):
@@ -13,7 +12,6 @@ class MitigationDocs(AttckDocs):
             os.mkdir(os.path.join(self.folder, 'mitigations'))
 
         self.folder = os.path.join(self.folder, 'mitigations')
-
 
     def go(self):
         for mitigation in self._attck.enterprise.mitigations:

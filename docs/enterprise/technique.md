@@ -16,7 +16,6 @@ Each technique enables you to access the following properties on the object:
 * datasets = A list of raw datasets associated with a technique
 * possible_detections = A list of raw datasets containing possible detection methods for a technique
 
-
 ## AttckTechnique Class
 
 ```eval_rst

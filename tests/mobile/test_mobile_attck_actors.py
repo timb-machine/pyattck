@@ -9,7 +9,6 @@ def test_mobile_attck_actors_have_techniques(attck_fixture):
         if actor.techniques:
             assert getattr(actor,'techniques')
 
-
 def test_some_mobile_attck_actors_have_generated_datasets(attck_fixture):
     """All MITRE Mobile ATT&CK Techniques should have techniques
 

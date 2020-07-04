@@ -4,7 +4,6 @@ from ..utils.logo import Logo
 from ..utils.exceptions import GeneratedDatasetException
 from ..datasets import AttckDatasets
 
-
 class AttckActor(AttckObject):
 
     '''A child class of AttckObject
@@ -118,7 +117,6 @@ class AttckActor(AttckObject):
 
         self.external_dataset = self.__get_actors_dataset()
 
-
     def __get_actors_dataset(self):
         return_list = []
         self.country = []
@@ -202,7 +200,6 @@ class AttckActor(AttckObject):
             return return_list
         else:
             return None
-
 
     @property
     def malwares(self):

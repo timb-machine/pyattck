@@ -8,7 +8,6 @@ from .githubcontroller import GitHubController
 from .attacktemplate import AttackTemplate
 from .markdowntable import MarkdownTable
 
-
 class OsqueryAttack(GitHubController):
     """
     Data Source: https://github.com/teoseller/osquery-attck

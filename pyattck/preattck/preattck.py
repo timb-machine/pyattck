@@ -2,7 +2,6 @@ from .technique import PreAttckTechnique
 from .actor import PreAttckActor
 from .tactic import PreAttckTactic
 
-
 class PreAttck(object):
 
     '''
@@ -32,7 +31,6 @@ class PreAttck(object):
 
             - ascii_logo - Generated ASCII logo based on the actor or groups name
 
-
     Example:
         Once an Attck object is instantiated, you can access each object type as a list of objects (e.g. techniques, tactics, actors, etc.)
 
@@ -60,7 +58,6 @@ class PreAttck(object):
                    print(technique.name)
                    print(technique.description)
                    # etc.
-
 
             2. To access relationship properties, do the following:
 
@@ -129,7 +126,6 @@ class PreAttck(object):
                 if tactic['type'] == 'x-mitre-tactic':
                     self.__tactics.append(PreAttckTactic(preattck_obj=self.__preattck, **tactic))
         return self.__tactics
-
 
     @property
     def techniques(self):

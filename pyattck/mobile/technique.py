@@ -2,7 +2,6 @@ from .mobileattckobject import MobileAttckObject
 from ..datasets import AttckDatasets
 from ..utils.exceptions import GeneratedDatasetException
 
-
 class MobileAttckTechnique(MobileAttckObject):
     '''A child class of MobileAttckObject
 
@@ -15,7 +14,6 @@ class MobileAttckTechnique(MobileAttckObject):
         3. queries = A list of dictionary objects containing product, query, and name associated with a technique
         4. datasets = A list of raw datasets associated with a technique
         5. possible_detections = A list of raw datasets containing possible detection methods for a technique
-
 
     Example:
         You can iterate over an `techniques` list and access specific properties and relationship properties.
@@ -127,7 +125,6 @@ class MobileAttckTechnique(MobileAttckObject):
                         tactic_list.append(MobileAttckTactic(**item))
         return tactic_list
 
-
     @tactics.setter
     def tactics(self, obj):
         """Sets the associated tactic/phase this technique is in
@@ -147,7 +144,6 @@ class MobileAttckTechnique(MobileAttckObject):
             self._tactic = temp_list
         except:
             self._tactic = ['no phase_name']
-
 
     @property
     def mitigations(self):

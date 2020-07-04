@@ -2,7 +2,6 @@ import os, json
 
 from .attckdocs import AttckDocs
 
-
 class ToolDocs(AttckDocs):
 
     c2_attribute_list = [
@@ -63,7 +62,6 @@ class ToolDocs(AttckDocs):
             os.mkdir(os.path.join(self.folder, 'tools'))
 
         self.folder = os.path.join(self.folder, 'tools')
-
 
     def add_c2_markdown_attributes(self, object, name):
         property_val = None
@@ -167,7 +165,6 @@ class ToolDocs(AttckDocs):
             if family:
                 markdown += family
 
-
             technique_List = None
             for technique in tool.techniques:
                 if technique_List is None:
@@ -184,7 +181,6 @@ class ToolDocs(AttckDocs):
 
 {technique_List}
 '''.format(technique_List=technique_List)
-
 
             actors_list = None
             for actor in tool.actors:

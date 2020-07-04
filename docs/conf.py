@@ -52,7 +52,6 @@ extensions = [
     'recommonmark'
 ]
 
-
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -79,7 +78,6 @@ exclude_patterns = [u'_build', 'Thumbs.db', '.DS_Store']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
-
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -109,12 +107,10 @@ html_static_path = ['_static']
 #
 # html_sidebars = {}
 
-
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'pyattckdoc'
-
 
 # -- Options for LaTeX output ------------------------------------------------
 
@@ -144,7 +140,6 @@ latex_documents = [
      u'Swimlane, Josh Rickard (MSAdministrator)', 'manual'),
 ]
 
-
 # -- Options for manual page output ------------------------------------------
 
 # One entry per manual page. List of tuples
@@ -153,7 +148,6 @@ man_pages = [
     (master_doc, 'pyattck', u'pyattck Documentation',
      [author], 1)
 ]
-
 
 # -- Options for Texinfo output ----------------------------------------------
 
@@ -165,7 +159,6 @@ texinfo_documents = [
      author, 'pyattck', 'One line description of project.',
      'Miscellaneous'),
 ]
-
 
 # -- Options for Epub output -------------------------------------------------
 
@@ -184,7 +177,6 @@ epub_title = project
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
 
-
 # -- Extension configuration -------------------------------------------------
 
 from recommonmark.transform import AutoStructify
@@ -196,7 +188,6 @@ def setup(app):
             'auto_toc_tree_section': 'Contents',
             }, True)
     app.add_transform(AutoStructify)
-
 
 #from recommonmark.parser import CommonMarkParser
 

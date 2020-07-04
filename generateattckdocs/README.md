@@ -15,4 +15,3 @@ This package will create a subfolder called `gendocs` and inidivual folders for 
 
 Each folder will contain multiple markdown files with data from `pyattck` 2.0.0+ 
 
-

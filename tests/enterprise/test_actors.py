@@ -29,7 +29,6 @@ def test_actors_have_techniques(attck_fixture):
         if actor.techniques:
             assert getattr(actor,'techniques')
 
-
 def test_some_actors_have_generated_datasets(attck_fixture):
     """Some MITRE Enterprise ATT&CK Actors should have generated datasets
 

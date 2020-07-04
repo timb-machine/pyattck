@@ -3,7 +3,6 @@ import warnings
 from .configuration import Configuration
 from .datasets import AttckDatasets
 
-
 class Attck(object):
 
     '''
@@ -174,7 +173,6 @@ class Attck(object):
         Configuration().set(enterprise_attck_json_path=attck_json, preattck_json_path=preattck_json, mobile_attck_json_path=mobile_json, enterprise_attck_dataset_path=dataset_json)
         self.__datasets = AttckDatasets()
 
-
     @property
     def enterprise(self):
         """Retrieve objects from the Enterprise MITRE ATT&CK Framework and additional generated data which provides additional context
@@ -207,7 +205,6 @@ class Attck(object):
         self.__load_data(type='mobile')
         from .mobile.mobileattck import MobileAttck
         return MobileAttck(self.__MOBILE_ATTCK_JSON)
-
 
     @property
     def actors(self):
@@ -358,7 +355,6 @@ class Attck(object):
             self.__load_data(type='mobile', force=True)
         if enterprise:
             self.__load_data(force=True)
-
 
     def __load_data(self, type='enterprise', force=False):
         if type == 'preattack':

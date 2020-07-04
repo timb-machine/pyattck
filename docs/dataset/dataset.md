@@ -91,7 +91,6 @@ This generated JSON file has the following main keys:
     - UI
     - Linux
 
-
 ## Generated Attck Data Structure
 
 The [generated_attck_data.json](https://raw.githubusercontent.com/swimlane/pyattck/master/generated_attck_data.json) has the following base structure. This is purely an example and contains modified/fake data.
@@ -157,7 +156,6 @@ The [generated_attck_data.json](https://raw.githubusercontent.com/swimlane/pyatt
 First of all, I would like to thank everyone who contributes to open-source projects, especially the maintainers and creators of these projects.  Without them, this capability would not be possible.
 
 This data set is generated from many different sources. As we continue to add more sources, we will continue to add them here.  Again thank you to all of these projects.  In no particular order, `pyattck` and `PSAttck` utilizes data from the following projects:
-
 
 * [Mitre ATT&CK APT3 Adversary Emulation Field Manual](https://attack.mitre.org/docs/APT3_Adversary_Emulation_Field_Manual.xlsx)
 * [Atomic Red Team (by Red Canary)](https://github.com/redcanaryco/atomic-red-team)

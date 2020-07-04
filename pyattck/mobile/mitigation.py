@@ -1,6 +1,5 @@
 from .mobileattckobject import MobileAttckObject
 
-
 class MobileAttckMitigation(MobileAttckObject):
     '''A child class of MobileAttckObject
 

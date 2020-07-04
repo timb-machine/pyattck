@@ -2,7 +2,6 @@ from .mobileattckobject import MobileAttckObject
 from ..datasets import AttckDatasets
 from ..utils.exceptions import GeneratedDatasetException
 
-
 class MobileAttckTools(MobileAttckObject):
     '''
         A child class of MobileAttckObject
@@ -69,7 +68,6 @@ class MobileAttckTools(MobileAttckObject):
             - Linux
 
         You can retrieve the entire dataset using the `c2_data` property.
-
 
         Example:
             You can iterate over an `tools` list and access specific properties and relationship properties.
@@ -153,8 +151,6 @@ class MobileAttckTools(MobileAttckObject):
 
         self.c2_data = self.__get_c2_dataset()
         self.external_dataset =  self.__get_tools_dataset()
-
-
 
     def __get_tools_dataset(self):
         return_list = []

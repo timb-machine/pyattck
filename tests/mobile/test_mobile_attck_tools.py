@@ -19,8 +19,6 @@ def test_mobile_attck_tools_have_actors(attck_fixture):
         if tool.actors:
             assert getattr(tool,'actors')
 
-
-
 def test_mobile_attck_some_tools_have_c2_data(attck_fixture):
     """All MITRE Mobile ATT&CK Tools should have c2 Matrix Data
 

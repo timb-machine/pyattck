@@ -1,5 +1,4 @@
 
-
 class MobileAttckObject(object):
     '''Parent class of all other MITRE Mobile ATT&CK based classes
 
@@ -27,7 +26,6 @@ class MobileAttckObject(object):
         self.modified = self._set_attribute(kwargs, 'modified')
         self.stix = self._set_attribute(kwargs, 'id')
         self.type = self._set_attribute(kwargs, 'type')
-
 
     def __str__(self):
         return_dict = {}
@@ -93,7 +91,6 @@ class MobileAttckObject(object):
         except:
             return None
 
-
     def _set_list_items(self, obj, list_name):
         """Private method used by child classes and normalizes list items
 
@@ -137,7 +134,6 @@ class MobileAttckObject(object):
             for p in obj['external_references']:
                 if p.get('source_name') == 'mitre-mobile-attack' or p.get('source_name') == 'mitre-attack':
                     return p.get('url')
-
 
     def _set_reference(self, obj):
         """Returns a list of external references from the provided MITRE Mobile ATT&CK Framework json object

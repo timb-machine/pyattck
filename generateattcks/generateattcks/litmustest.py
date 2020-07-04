@@ -5,7 +5,6 @@ from bs4 import BeautifulSoup
 from .githubcontroller import GitHubController
 from .attacktemplate import AttackTemplate
 
-
 class LitmusTest(GitHubController):
     """ Data Source: https://github.com/Kirtar22/Litmus_Test
     Authors:
@@ -39,7 +38,6 @@ class LitmusTest(GitHubController):
                     if template:
                         return_list.append(template)
         return return_list
-
 
     def __parse_markdown(self, content):
         if content.strip():
@@ -85,7 +83,6 @@ class LitmusTest(GitHubController):
                         elif line.startswith('#'):
                             queries = False
             return template.get()
-
 
     def __download_raw_content(self, url):
         response = self.session.get(url)

@@ -2,7 +2,6 @@
 
 This documentation provides details about configuration options within the `pyattck` package.
 
-
 ### Specifying an alternate storage location
 
 You can also specify an alternate location of different file objects.
@@ -28,7 +27,6 @@ from pyattck import Attck
 
 attack = Attck(config_path='/Users/{profile_name}/Desktop/config.yml')
 ```
-
 
 ## Configuration Class
 

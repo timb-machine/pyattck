@@ -1,6 +1,5 @@
 import pytest 
 
-
 def test_preattck_techniques_have_tactics(attck_fixture):
     """All MITRE PRE-ATT&CK Techniques should have tactics
 

@@ -2,7 +2,6 @@ from .attckobject import AttckObject
 from ..datasets import AttckDatasets
 from ..utils.exceptions import GeneratedDatasetException
 
-
 class AttckTools(AttckObject):
     '''
         A child class of AttckObject
@@ -69,7 +68,6 @@ class AttckTools(AttckObject):
             - Linux
 
         You can retrieve the entire dataset using the `c2_data` property.
-
 
         Example:
             You can iterate over an `tools` list and access specific properties and relationship properties.
@@ -158,8 +156,6 @@ class AttckTools(AttckObject):
 
         self.c2_data = self.__get_c2_dataset()
         self.external_dataset =  self.__get_tools_dataset()
-
-
 
     def __get_tools_dataset(self):
         return_list = []

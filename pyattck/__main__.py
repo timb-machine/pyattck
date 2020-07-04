@@ -2,7 +2,6 @@ import fire
 
 from pyattck import Attck
 
-
 def main(args=None):
     attck = Attck()
     fire.Fire(attck)

@@ -2,7 +2,6 @@ import requests
 
 from .attacktemplate import AttackTemplate
 
-
 class NewBeeAttackDataset(object):
 
     """

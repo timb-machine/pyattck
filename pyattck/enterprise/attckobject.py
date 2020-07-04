@@ -1,5 +1,4 @@
 
-
 class AttckObject(object):
     '''Parent class of all other Mitre ATT&CK based classes
 
@@ -27,7 +26,6 @@ class AttckObject(object):
         self.modified = self._set_attribute(kwargs, 'modified')
         self.stix = self._set_attribute(kwargs, 'id')
         self.type = self._set_attribute(kwargs, 'type')
-
 
     def __str__(self):
         return_dict = {}
@@ -57,7 +55,6 @@ class AttckObject(object):
                             relationship_obj[target_id] = []
                         relationship_obj[target_id].append(source_id)
             AttckObject._RELATIONSHIPS = relationship_obj
-
 
     def __set_alias(self, obj):
         """Returns the Mitre ATT&CK Framework aliases
@@ -93,7 +90,6 @@ class AttckObject(object):
             return None if not value else value
         except:
             return None
-
 
     def _set_list_items(self, obj, list_name):
         """Private method used by child classes and normalizes list items

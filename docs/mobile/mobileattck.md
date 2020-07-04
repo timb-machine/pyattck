@@ -25,7 +25,6 @@ for technique in attack.mobile.techniques:
 
 The following is only a small sample of the available properties on each object and each object type (actors, malware, mitigations, tactics, techniques, and tools) will have different properties that you can access.
 
-
 * Every data point has exposed properties that allow the user to retrieve additional data based on relationships:
     * [Actor](actor.md)
         * Relationship Objects
@@ -69,8 +68,6 @@ The following is only a small sample of the available properties on each object 
             * attribution_links associated with the specified tool
             * additional_comments about the specified tool
             * family of the specified tool
-
-
 
 Below shows you how you can access each of object types and their properties.  Additionally, you can access related object types associated with this selected object type:
 
@@ -207,7 +204,6 @@ for tool in attack.mobile.tools:
    :undoc-members:
    :show-inheritance:
 ```
-
 
 ```eval_rst
 .. toctree::

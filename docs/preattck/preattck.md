@@ -27,7 +27,6 @@ for technique in attack.preattack.techniques:
 
 The following is only a small sample of the available properties on each object and each object type (actors, tactics, and techniques) will have different properties that you can access.
 
-
 * Every data point has exposed properties that allow the user to retrieve additional data based on relationships:
     * [Actor](actor.md)
         * Relationship Objects
@@ -47,7 +46,6 @@ The following is only a small sample of the available properties on each object 
         * Relationship Objects
             * Tactics a technique is found in
             * Actor or Group(s) identified as using this technique
-
 
 Below shows you how you can access each of object types and their properties.  Additionally, you can access related object types associated with this selected object type:
 
@@ -99,7 +97,6 @@ for technique in attack.preattack.techniques:
    :undoc-members:
    :show-inheritance:
 ```
-
 
 ```eval_rst
 .. toctree::

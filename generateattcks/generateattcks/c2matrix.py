@@ -4,7 +4,6 @@ import requests
 
 from .attacktemplate import AttackTemplate
 
-
 class C2Matrix(object):
     """
     Data Source: https://www.thec2matrix.com/

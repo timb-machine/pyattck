@@ -1,6 +1,5 @@
 from .attckobject import AttckObject
 
-
 class AttckMitigation(AttckObject):
     '''A child class of AttckObject
 

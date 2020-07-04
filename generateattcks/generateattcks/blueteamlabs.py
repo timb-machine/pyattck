@@ -3,7 +3,6 @@ import requests, yaml
 from .githubcontroller import GitHubController
 from .attacktemplate import AttackTemplate
 
-
 class BlueTeamLabs(GitHubController):
     """ Data Source: https://github.com/BlueTeamLabs/sentinel-attack
     Authors:

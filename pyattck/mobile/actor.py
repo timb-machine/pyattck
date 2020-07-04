@@ -4,7 +4,6 @@ from ..utils.logo import Logo
 from ..utils.exceptions import GeneratedDatasetException
 from ..datasets import AttckDatasets
 
-
 class MobileAttckActor(MobileAttckObject):
 
     '''A child class of MobileAttckObject
@@ -97,7 +96,6 @@ class MobileAttckActor(MobileAttckObject):
         logo = Logo(self.name.strip().replace(' ','_').lower())
         self.ascii_logo = logo.get_ascii()
 
-
         if MobileAttckActor.__ATTCK_DATASETS is None:
             try:
                 data = AttckDatasets().generated_attck_data()
@@ -107,7 +105,6 @@ class MobileAttckActor(MobileAttckObject):
                 raise GeneratedDatasetException('Unable to retrieve generated attack data properties')
 
         self.external_dataset = self.__get_actors_dataset()
-
 
     def __get_actors_dataset(self):
         return_list = []
@@ -192,7 +189,6 @@ class MobileAttckActor(MobileAttckObject):
             return return_list
         else:
             return None
-
 
     @property
     def malwares(self):

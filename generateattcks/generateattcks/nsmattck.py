@@ -4,7 +4,6 @@ from .githubcontroller import GitHubController
 from .markdowntable import MarkdownTable
 from .attacktemplate import AttackTemplate
 
-
 class NSMAttck(GitHubController):
     """
     Data Source: https://github.com/0xtf/nsm-attack
@@ -13,7 +12,6 @@ class NSMAttck(GitHubController):
 
     This class is a wrapper for the above data set
     """
-
 
     __URL = 'https://raw.githubusercontent.com/0xtf/nsm-attack/master/{}'
     __REPO = '0xtf/nsm-attack'
@@ -54,7 +52,6 @@ class NSMAttck(GitHubController):
                 template.add_possible_queries('Suricata (NSM)', detection['Signature'], name='{} Rule'.format(detection['Rules']))
                 template.add_dataset(self.__REPO, detection)
             return template.get()
-
 
     def __download_raw_content(self, url):
         response = self.session.get(url.encode('utf-8'))

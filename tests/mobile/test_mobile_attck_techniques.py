@@ -1,6 +1,5 @@
 import pytest 
 
-
 def test_mobile_attck_techniques_have_tactics(attck_fixture):
     """All MITRE Mobile ATT&CK Techniques should have tactics
 

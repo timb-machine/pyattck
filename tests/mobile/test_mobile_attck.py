@@ -3,7 +3,6 @@ import os
 import yaml
 from os.path import expanduser
 
-
 @pytest.mark.parametrize(
     'target_attribute', 
     ['techniques', 'tactics', 'actors', 'mitigations', 'tools', 'malwares']

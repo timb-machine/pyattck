@@ -19,8 +19,6 @@ def test_tools_have_actors(attck_fixture):
         if tool.actors:
             assert getattr(tool,'actors')
 
-
-
 def test_some_tools_have_c2_data(attck_fixture):
     """Some MITRE Enterprise ATT&CK Tools should have C2 Matrix Data
 

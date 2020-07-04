@@ -4,7 +4,6 @@ from zipfile import ZipFile
 
 from .attacktemplate import AttackTemplate
 
-
 class AttckEmpire(object):
     """
     Data Source: https://github.com/dstepanic/attck_empire

@@ -1,7 +1,6 @@
 import yaml, os
 from github import Github
 
-
 class GitHubController(object):
 
     def __init__(self):

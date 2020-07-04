@@ -3,7 +3,6 @@ from ..utils.logo import Logo
 from ..utils.exceptions import GeneratedDatasetException
 from ..datasets import AttckDatasets
 
-
 class PreAttckActor(PreAttckObject):
 
     '''A child class of PreAttckObject
@@ -106,7 +105,6 @@ class PreAttckActor(PreAttckObject):
 
         self.external_dataset = self.__get_actors_dataset()
 
-
     def __get_actors_dataset(self):
         return_list = []
         self.country = []
@@ -190,7 +188,6 @@ class PreAttckActor(PreAttckObject):
             return return_list
         else:
             return None
-
 
     @property
     def techniques(self):

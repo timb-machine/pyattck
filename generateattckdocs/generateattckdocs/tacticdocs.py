@@ -2,7 +2,6 @@ import os
 
 from .attckdocs import AttckDocs
 
-
 class TacticDocs(AttckDocs):
 
     def __init__(self, folder):
@@ -13,7 +12,6 @@ class TacticDocs(AttckDocs):
             os.mkdir(os.path.join(self.folder, 'tactics'))
 
         self.folder = os.path.join(self.folder, 'tactics')
-
 
     def go(self):
         for tactic in self._attck.enterprise.tactics:

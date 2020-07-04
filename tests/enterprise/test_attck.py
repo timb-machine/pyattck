@@ -3,7 +3,6 @@ import os
 import yaml
 from os.path import expanduser
 
-
 @pytest.mark.parametrize(
     'target_attribute', 
     ['techniques', 'tactics', 'mitigations', 'malwares', 'actors', 'tools']
@@ -52,7 +51,6 @@ def test_all_attck_objects_have_standard_properties(target_attribute,target_prop
             return_list.append(getattr(attribute,target_properties))
     if len(return_list) >= 1:
         assert True
-
 
 @pytest.mark.parametrize(
     'target_attribute', 

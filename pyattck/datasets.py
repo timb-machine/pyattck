@@ -1,7 +1,6 @@
 import requests, json, pendulum, os
 from .configuration import Configuration
 
-
 class AttckDatasets(object):
 
     """AttckDatasets is used to download, save or retrieve datasets for pyattck.
@@ -24,7 +23,6 @@ class AttckDatasets(object):
         self.preattck_json_path = config['preattck_json']
         self.mobile_attck_json_path = config['mobile_attck_json']
         self.dataset_json_path = config['enterprise_attck_dataset']
-
 
     def __get_mitre_json(self, url, path, force=False):
         if force:
@@ -63,7 +61,6 @@ class AttckDatasets(object):
         else:
             url = self.__MITRE_ENTERPRISE_ATTCK_JSON_URL
             return self.__get_mitre_json(url, self.attck_json_path, force=force)
-
 
     def generated_attck_data(self, force=False):
         """Downloads, saves, or retrieves the Mitre ATT&CK Enterprise Generated Dataset JSON

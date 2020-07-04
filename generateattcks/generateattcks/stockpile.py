@@ -3,7 +3,6 @@ import requests, yaml, base64
 from .githubcontroller import GitHubController
 from .attacktemplate import AttackTemplate
 
-
 class MitreStockpile(GitHubController):
     """
     Data Source: https://github.com/mitre/stockpile
@@ -37,7 +36,6 @@ class MitreStockpile(GitHubController):
     @attack_paths.setter
     def attack_paths(self, val):
         self.__attack_paths = val
-
 
     def get_stockpile(self):
         return self.__stockpile
@@ -87,7 +85,6 @@ class MitreStockpile(GitHubController):
 
         self.attack_paths = return_list
 
-
     def __parse_yaml_content(self, content, url):
         if isinstance(content, list):
             template = AttackTemplate()
@@ -100,7 +97,6 @@ class MitreStockpile(GitHubController):
             if content:
                 if 'phases' in content:
                     self.__temp_attack_paths.append(content)
-
 
     def __download_raw_content(self, url):
         response = self.session.get(url)

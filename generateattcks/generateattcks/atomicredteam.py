@@ -4,7 +4,6 @@ from github import Github
 from .githubcontroller import GitHubController
 from .attacktemplate import AttackTemplate
 
-
 class AtomicRedTeam(GitHubController):
     """
     Data Source: https://github.com/redcanaryco/atomic-red-team
@@ -64,7 +63,6 @@ class AtomicRedTeam(GitHubController):
         template.id = content['attack_technique']
         template.add_dataset('Atomic Red Team Test - {name}'.format(name=content['display_name']), content)
         return template.get()      
-
 
     def __download_raw_content(self, url):
         response = self.session.get(url)

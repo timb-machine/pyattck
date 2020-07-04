@@ -16,7 +16,6 @@
 ```
 	A Python package to interact with MITRE ATT&CK Frameworks
 
-
 **pyattck** is a light-weight framework for MITRE ATT&CK Frameworks. This package extracts details from the MITRE Enterprise, PRE-ATT&CK, and Mobile Frameworks.
 
 ## Features
@@ -184,7 +183,6 @@ First of all, I would like to thank everyone who contributes to open-source proj
 
 This data set is generated from many different sources. As we continue to add more sources, we will continue to add them here. Again thank you to all of these projects. In no particular order, `pyattck` utilizes data from the following projects:
 
-
 * [Mitre ATT&CK APT3 Adversary Emulation Field Manual](https://attack.mitre.org/docs/APT3_Adversary_Emulation_Field_Manual.xlsx)
 * [Atomic Red Team (by Red Canary)](https://github.com/redcanaryco/atomic-red-team)
 * [Atomic Threat Coverage](https://github.com/atc-project/atomic-threat-coverage)
@@ -202,7 +200,6 @@ This data set is generated from many different sources. As we continue to add mo
 * [Elemental](https://github.com/Elemental-attack/Elemental)
 * [MalwareArchaeology - ATTACK](https://github.com/MalwareArchaeology/ATTACK)
 * [Attack-Technique-Dataset](https://github.com/NewBee119/Attack-Technique-Dataset)
-
 
 ```eval_rst
 .. toctree::

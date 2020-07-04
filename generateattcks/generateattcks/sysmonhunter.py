@@ -2,7 +2,6 @@ import requests, yaml
 
 from .attacktemplate import AttackTemplate
 
-
 class SysmonHunter(object):
     """
     Data Source: https://github.com/baronpan/SysmonHunter

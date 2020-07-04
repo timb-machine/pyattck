@@ -5,7 +5,6 @@ from .tools import MobileAttckTools
 from .mitigation import MobileAttckMitigation
 from .tactic import MobileAttckTactic
 
-
 class MobileAttck(object):
 
     '''
@@ -109,7 +108,6 @@ class MobileAttck(object):
         - Linux
 
     You can retrieve the entire dataset using the `c2_data` property.
-
 
     Example:
         Once an Attck object is instantiated, you can access each object type as a list of objects (e.g. techniques, tactics, actors, etc.)
