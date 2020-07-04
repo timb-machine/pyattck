@@ -6,9 +6,9 @@ from ..utils.exceptions import GeneratedDatasetException
 class MobileAttckTools(MobileAttckObject):
     '''
         A child class of MobileAttckObject
-    
+
         Creates objects which have been categorized as tools or software which have been categorized as software used in attacks
-        
+
         You can also access external data properties. The following properties are generated using external data:
 
             1. additional_names
@@ -77,11 +77,11 @@ class MobileAttckTools(MobileAttckObject):
             The following relationship properties are accessible:
                     1. techniques
                     2. actors
-            
+
                 1. To iterate over an `tools` list, do the following:
 
                 .. code-block:: python
-                
+
                 from pyattck import Attck
 
                 attck = Attck()
@@ -119,14 +119,14 @@ class MobileAttckTools(MobileAttckObject):
         """
         Creates an MobileAttckTools object.  
         The MobileAttckTools object is based on software which have been categorized as software used in attacks
-        
+
         Arguments:
             mobile_attck_obj (json) -- Takes the raw MITRE Mobile ATT&CK Json object
             AttckObject (dict) -- Takes the MITRE Mobile ATT&CK Json object as a kwargs values
         """
         super(MobileAttckTools, self).__init__(**kwargs)
         self.__mobile_attck_obj = mobile_attck_obj
-      
+
         self.external_reference = self._set_reference(kwargs)
         self.platforms = self._set_list_items(kwargs, 'x_mitre_platforms')
         self.version = self._set_attribute(kwargs, 'x_mitre_version')
@@ -136,7 +136,7 @@ class MobileAttckTools(MobileAttckObject):
         self.old_attack_id = self._set_attribute(kwargs, 'x_mitre_old_attack_id')
         self.stix = self._set_attribute(kwargs, 'id')
         self.wiki = self._set_wiki(kwargs)
-        
+
         self.set_relationships(self.__mobile_attck_obj)
 
         if MobileAttckTools.__ATTCK_C2_DATASETS is None or MobileAttckTools.__ATTCK_TOOLS_DATASETS is None:
@@ -236,7 +236,7 @@ class MobileAttckTools(MobileAttckObject):
             if 'type' in item:
                 if item['type'] == 'attack-pattern':
                     item_dict[item['id']] = item
-        
+
         for item in self._RELATIONSHIPS[self.stix]:
             if item in item_dict:
                 return_list.append(MobileAttckTechnique(**item_dict[item]))
@@ -256,7 +256,7 @@ class MobileAttckTools(MobileAttckObject):
             if 'type' in item:
                 if item['type'] == 'intrusion-set':
                     item_dict[item['id']] = item
-        
+
         for item in self._RELATIONSHIPS[self.stix]:
             if item in item_dict:
                 return_list.append(MobileAttckActor(**item_dict[item]))

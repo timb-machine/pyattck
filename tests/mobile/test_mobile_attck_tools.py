@@ -1,7 +1,7 @@
 
 def test_mobile_attck_tools_have_techniques(attck_fixture):
     """All MITRE Mobile ATT&CK tools should have techniques
-    
+
     Args:
         attck_fixture ([type]): our default MITRE Mobile ATT&CK JSON fixture
     """
@@ -11,7 +11,7 @@ def test_mobile_attck_tools_have_techniques(attck_fixture):
 
 def test_mobile_attck_tools_have_actors(attck_fixture):
     """All MITRE Mobile ATT&CK Tools should have Actors
-    
+
     Args:
         attck_fixture ([type]): our default MITRE Mobile ATT&CK JSON fixture
     """
@@ -23,7 +23,7 @@ def test_mobile_attck_tools_have_actors(attck_fixture):
 
 def test_mobile_attck_some_tools_have_c2_data(attck_fixture):
     """All MITRE Mobile ATT&CK Tools should have c2 Matrix Data
-    
+
     Args:
         attck_fixture ([type]): our default MITRE Mobile ATT&CK JSON fixture
     """
@@ -36,7 +36,7 @@ def test_mobile_attck_some_tools_have_c2_data(attck_fixture):
 
 def test_mobile_attck_some_tools_have_generated_datasets(attck_fixture):
     """All MITRE Mobile ATT&CK Tools should have generated datasets
-    
+
     Args:
         attck_fixture ([type]): our default MITRE Mobile ATT&CK JSON fixture
     """
@@ -49,7 +49,7 @@ def test_mobile_attck_some_tools_have_generated_datasets(attck_fixture):
 
 def test_mobile_attck_some_tools_have_generated_datasets_properties(attck_fixture):
     """All MITRE Mobile ATT&CK Tools should have generated datasets properties
-    
+
     Args:
         attck_fixture ([type]): our default MITRE Mobile ATT&CK JSON fixture
     """
@@ -57,7 +57,7 @@ def test_mobile_attck_some_tools_have_generated_datasets_properties(attck_fixtur
     attribution_links_count = 0
     additional_comments_count = 0
     family_count = 0
-    
+
     for tool in attck_fixture.mobile.tools:
         if hasattr(tool, 'additional_names'):
             additional_names_count += 1

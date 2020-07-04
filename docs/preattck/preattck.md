@@ -103,7 +103,7 @@ for technique in attack.preattack.techniques:
 
 ```eval_rst
 .. toctree::
-   
+
    actor
    tactic
    technique

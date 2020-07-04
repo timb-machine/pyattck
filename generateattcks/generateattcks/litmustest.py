@@ -13,7 +13,7 @@ class LitmusTest(GitHubController):
 
     This class is a wrapper for the above data set
     """
-    
+
     __URL = 'https://raw.githubusercontent.com/Kirtar22/Litmus_Test/master/{}'
     __REPO = 'Kirtar22/Litmus_Test'
 
@@ -85,8 +85,8 @@ class LitmusTest(GitHubController):
                         elif line.startswith('#'):
                             queries = False
             return template.get()
-        
-        
+
+
     def __download_raw_content(self, url):
         response = self.session.get(url)
         if response.status_code == 200:

@@ -28,23 +28,23 @@ class Attck(object):
         You can also search the external dataset for external commands that are similar using the `search_commands` method.
 
            .. code-block:: python
-               
+
                from pyattck import Attck
 
                attck = Attck()
-               
+
                for search in attck.enterprise.search_commands('powershell'):
                    print(search['technique'])
                    print(search['reason_for_match'])
 
         Additionally, as of pyattck 2.0.0 you can now access additional datasets related to a technique.
         These datasets are [documented here](https://github.com/swimlane/pyattck/blob/master/generateattcks/README.md).
-    
+
     Example:
         Once an Attck object is instantiated, you can access each object type as a list of objects (e.g. techniques, tactics, actors, etc.)
 
         You can iterate over each object list and access specific properties and relationship properties of each.
-        
+
         The following relationship properties are accessible:
             1. Actors
                 1. Tools used by the Actor or Group
@@ -64,15 +64,15 @@ class Attck(object):
             6. Tools
                 1. Techniques that the specified tool is used within
                 2. Actor or Group(s) using a specified tool
-        
+
             1. To iterate over a list, do the following:
 
             .. code-block:: python
-               
+
                from pyattck import Attck
 
                attck = Attck()
-               
+
                for technique in attck.enterprise.techniques:
                    print(technique.id)
                    print(technique.name)
@@ -91,7 +91,7 @@ class Attck(object):
                from pyattck import Attck
 
                attck = Attck()
-               
+
                for technique in attck.enterprise.techniques:
                    print(technique.id)
                    print(technique.name)
@@ -159,7 +159,7 @@ class Attck(object):
                     preattck_json: /Users/first.last/pyattck/preattck.json
                     mobile_json: /Users/first.last/pyattck/mobile_attck.json
                     enterprise_attck_json: /Users/first.last/pyattck/enterprise_attck.json
-        
+
         Args:
             attck_json (str, optional): Path to the MITRE ATT&CK Enterprise Framework json. Defaults to None.
             dataset_json (str, optional): Path to a local dataset json file which is generated in the pyattck repo. Defaults to None.
@@ -170,15 +170,15 @@ class Attck(object):
 
         if config_path:
             Configuration.__CONFIG_FILE = config_path
-        
+
         Configuration().set(enterprise_attck_json_path=attck_json, preattck_json_path=preattck_json, mobile_attck_json_path=mobile_json, enterprise_attck_dataset_path=dataset_json)
         self.__datasets = AttckDatasets()
-        
+
 
     @property
     def enterprise(self):
         """Retrieve objects from the Enterprise MITRE ATT&CK Framework and additional generated data which provides additional context
-        
+
         Returns:
             Enterprise: Returns an Enterprise object
         """        
@@ -189,7 +189,7 @@ class Attck(object):
     @property
     def preattack(self):
         """Retrieve objects from the MITRE PRE-ATT&CK Framework
-        
+
         Returns:
             PreAttack: Returns an PreAttack object
         """
@@ -200,7 +200,7 @@ class Attck(object):
     @property
     def mobile(self):
         """Retrieve objects from the MITRE Mobile ATT&CK Framework
-        
+
         Returns:
             PreAttack: Returns an MobileAttack object
         """
@@ -214,13 +214,13 @@ class Attck(object):
         """Creates AttckActor objects
 
         This property will be deprecated in a future release.  Please use the Enterprise property to access these objects.
-        
+
         Returns:
             (AttckActor) -- (Returns a list of AttckActor objects)
         """
         warnings.warn(
             '''Accessing actors property from an Attck object will be depreciated in version 3.
-            
+
             Please begin migrating to accessing the Enterprise MITRE ATT&CK objects using the enterprise property''',
             DeprecationWarning)
         self.__load_data()
@@ -237,13 +237,13 @@ class Attck(object):
         """Creates AttckTactic objects
 
         This property will be deprecated in a future release.  Please use the Enterprise property to access these objects.
-        
+
         Returns:
             (AttckTactic) -- (Returns a list of AttckTactic objects)
         """
         warnings.warn(
             '''Accessing tactics property from an Attck object will be depreciated in version 3.
-            
+
             Please begin migrating to accessing the Enterprise MITRE ATT&CK objects using the enterprise property''',
             DeprecationWarning)
         self.__load_data()
@@ -260,13 +260,13 @@ class Attck(object):
         """Creates AttckMitigation objects
 
         This property will be deprecated in a future release.  Please use the Enterprise property to access these objects.
-        
+
         Returns:
             (AttckMitigation) -- (Returns a list of AttckMitigation objects)
         """
         warnings.warn(
             '''Accessing mitigations property from an Attck object will be depreciated in version 3.
-            
+
             Please begin migrating to accessing the Enterprise MITRE ATT&CK objects using the enterprise property''',
             DeprecationWarning)
         self.__load_data()
@@ -283,13 +283,13 @@ class Attck(object):
         """Creates AttckTools objects
 
         This property will be deprecated in a future release.  Please use the Enterprise property to access these objects.
-        
+
         Returns:
             (AttckTools) -- Returns a list of AttckTools objects
         """
         warnings.warn(
             '''Accessing tools property from an Attck object will be depreciated in version 3.
-            
+
             Please begin migrating to accessing the Enterprise MITRE ATT&CK objects using the enterprise property''',
             DeprecationWarning)
         self.__load_data()
@@ -307,13 +307,13 @@ class Attck(object):
         """Creates AttckMalware objects
 
         This property will be deprecated in a future release.  Please use the Enterprise property to access these objects.
-        
+
         Returns:
             (AttckMalware) -- Returns a list of AttckMalware objects
         """
         warnings.warn(
             '''Accessing malwares property from an Attck object will be depreciated in version 3.
-            
+
             Please begin migrating to accessing the Enterprise MITRE ATT&CK objects using the enterprise property''',
             DeprecationWarning)
         self.__load_data()
@@ -330,13 +330,13 @@ class Attck(object):
         """Creates AttckTechnique objects
 
         This property will be deprecated in a future release.  Please use the Enterprise property to access these objects.
-        
+
         Returns:
             (AttckTechnique) -- Returns a list of AttckTechnique objects
         """
         warnings.warn(
             '''Accessing techniques property from an Attck object will be depreciated in version 3.
-            
+
             Please begin migrating to accessing the Enterprise MITRE ATT&CK objects using the enterprise property''',
             DeprecationWarning)
         self.__load_data()

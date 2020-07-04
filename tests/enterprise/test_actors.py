@@ -1,7 +1,7 @@
 
 def test_actors_have_tools(attck_fixture):
     """All MITRE Enterprise ATT&CK Actors should have tools
-    
+
     Args:
         attck_fixture ([type]): our default MITRE Enterprise ATT&CK JSON fixture
     """
@@ -11,7 +11,7 @@ def test_actors_have_tools(attck_fixture):
 
 def test_actors_have_malwares(attck_fixture):
     """All MITRE Enterprise ATT&CK Actors should have malwares
-    
+
     Args:
         attck_fixture ([type]): our default MITRE Enterprise ATT&CK JSON fixture
     """
@@ -21,7 +21,7 @@ def test_actors_have_malwares(attck_fixture):
 
 def test_actors_have_techniques(attck_fixture):
     """All MITRE Enterprise ATT&CK Actors should have techniques
-    
+
     Args:
         attck_fixture ([type]): our default MITRE Enterprise ATT&CK JSON fixture
     """
@@ -32,7 +32,7 @@ def test_actors_have_techniques(attck_fixture):
 
 def test_some_actors_have_generated_datasets(attck_fixture):
     """Some MITRE Enterprise ATT&CK Actors should have generated datasets
-    
+
     Args:
         attck_fixture ([type]): our default MITRE Enterprise ATT&CK JSON fixture
     """
@@ -45,7 +45,7 @@ def test_some_actors_have_generated_datasets(attck_fixture):
 
 def test_some_actors_have_generated_datasets_properties(attck_fixture):
     """Some MITRE Enterprise ATT&CK Actors should have generated datasets properties
-    
+
     Args:
         attck_fixture ([type]): our default MITRE Enterprise ATT&CK JSON fixture
     """
@@ -74,10 +74,10 @@ def test_some_actors_have_generated_datasets_properties(attck_fixture):
 
     if country_count >= 1 and operations_count >= 1 and attribution_links_count >= 1 and known_tools_count >= 1 and targets_count >= 1 and additional_comments_count >= 1 and external_description_count >= 1:
         assert True
-   
+
 def test_actors_has_ascii_logo(attck_fixture):
     """All MITRE Enterprise ATT&CK Actors should have ascii logos
-    
+
     Args:
         attck_fixture ([type]): our default MITRE Enterprise ATT&CK JSON fixture
     """
@@ -87,6 +87,6 @@ def test_actors_has_ascii_logo(attck_fixture):
         count += 1
         if hasattr(actor, 'ascii_logo'):
             logo_count += 1
-        
+
     if count == logo_count:
         assert True

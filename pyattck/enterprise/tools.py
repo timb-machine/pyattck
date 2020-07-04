@@ -6,9 +6,9 @@ from ..utils.exceptions import GeneratedDatasetException
 class AttckTools(AttckObject):
     '''
         A child class of AttckObject
-    
+
         Creates objects which have been categorized as tools or software which have been categorized as software used in attacks
-        
+
         You can also access external data properties. The following properties are generated using external data:
 
             1. additional_names
@@ -77,11 +77,11 @@ class AttckTools(AttckObject):
             The following relationship properties are accessible:
                     1. techniques
                     2. actors
-            
+
                 1. To iterate over an `tools` list, do the following:
 
                 .. code-block:: python
-                
+
                 from pyattck import Attck
 
                 attck = Attck()
@@ -239,7 +239,7 @@ class AttckTools(AttckObject):
             if 'type' in item:
                 if item['type'] == 'attack-pattern':
                     item_dict[item['id']] = item
-        
+
         for item in self._RELATIONSHIPS[self.stix]:
             if item in item_dict:
                 return_list.append(AttckTechnique(**item_dict[item]))
@@ -259,7 +259,7 @@ class AttckTools(AttckObject):
             if 'type' in item:
                 if item['type'] == 'intrusion-set':
                     item_dict[item['id']] = item
-        
+
         for item in self._RELATIONSHIPS[self.stix]:
             if item in item_dict:
                 return_list.append(AttckActor(**item_dict[item]))

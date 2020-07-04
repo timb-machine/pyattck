@@ -211,7 +211,7 @@ for tool in attack.mobile.tools:
 
 ```eval_rst
 .. toctree::
-   
+
    actor
    malware
    mitigation

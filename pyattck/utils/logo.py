@@ -9,7 +9,7 @@ ASCII_CHARS = ASCII_CHARS[::-1]
 class Logo(object):
 
     """Generate or retrieve a logo for a given MITRE ATT&CK Actor or Group name
-    
+
     Returns:
         str: The path to a image logo or string containing a generated ASCII text based on the Actor or Group name
     """    
@@ -22,7 +22,7 @@ class Logo(object):
 
     def get_ascii(self):
         """Retrieve a ASCII string of an Actor or Group by name
-        
+
         Returns:
             str: ASCII string of a generated logo
         """        
@@ -30,7 +30,7 @@ class Logo(object):
 
     def get_image(self):
         """Retrieve a image logo path of an Actor or Group by name
-        
+
         Returns:
             str: The path to the image logo of an Actor or Group by name
         """        
@@ -63,7 +63,7 @@ class Logo(object):
         new_dim = (new_width, new_height)
         new_image = image.resize(new_dim)
         return new_image
-    
+
     def __gray_scale(self, image):
         '''
         method grayscalify():

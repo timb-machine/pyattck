@@ -17,14 +17,14 @@ class AttckEmpire(object):
     URL = 'https://github.com/dstepanic/attck_empire/blob/master/Empire_modules.xlsx?raw=true'
 
     OFFSET = 1
-    
+
     def _parse(self, sheet):
         header_row = sheet.row(0)
 
         columns = []
         for item in header_row:
             columns.append(str(item).split(':')[1].replace("'","").lstrip('u'))
-    
+
         rows = []
         for i, row in enumerate(range(sheet.nrows)):
             if i <= self.OFFSET:
@@ -47,7 +47,7 @@ class AttckEmpire(object):
                 template.id = item['ATT&CK Technique #1']
                 if 'Empire Module' in item:
                     template.add_command(self.URL, item['Empire Module'], name='Empire Module Command')
-                
+
             template.add_dataset('Empire Module XLSX Sheet by dstepanic', item)
             return_list.append(template.get())
         return return_list

@@ -1,7 +1,7 @@
 
 def test_tools_have_techniques(attck_fixture):
     """All MITRE Enterprise ATT&CK Tools should have Techniques
-    
+
     Args:
         attck_fixture ([type]): our default MITRE Enterprise ATT&CK JSON fixture
     """
@@ -11,7 +11,7 @@ def test_tools_have_techniques(attck_fixture):
 
 def test_tools_have_actors(attck_fixture):
     """All Mitre ATT&CK Tools should have Actors
-    
+
     Args:
         attck_fixture ([type]): our default MITRE Enterprise ATT&CK JSON fixture
     """
@@ -23,7 +23,7 @@ def test_tools_have_actors(attck_fixture):
 
 def test_some_tools_have_c2_data(attck_fixture):
     """Some MITRE Enterprise ATT&CK Tools should have C2 Matrix Data
-    
+
     Args:
         attck_fixture ([type]): our default MITRE Enterprise ATT&CK JSON fixture
     """
@@ -36,7 +36,7 @@ def test_some_tools_have_c2_data(attck_fixture):
 
 def test_some_tools_have_generated_datasets(attck_fixture):
     """Some MITRE Enterprise ATT&CK Tools should have generated datasets
-    
+
     Args:
         attck_fixture ([type]): our default MITRE Enterprise ATT&CK JSON fixture
     """
@@ -49,7 +49,7 @@ def test_some_tools_have_generated_datasets(attck_fixture):
 
 def test_some_tools_have_generated_datasets_properties(attck_fixture):
     """Some MITRE Enterprise ATT&CK Tools should have generated datsets properties
-    
+
     Args:
         attck_fixture ([type]): our default MITRE Enterprise ATT&CK JSON fixture
     """
@@ -57,7 +57,7 @@ def test_some_tools_have_generated_datasets_properties(attck_fixture):
     attribution_links_count = 0
     additional_comments_count = 0
     family_count = 0
-    
+
     for tool in attck_fixture.enterprise.tools:
         if hasattr(tool, 'additional_names'):
             additional_names_count += 1

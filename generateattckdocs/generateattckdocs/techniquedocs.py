@@ -13,9 +13,9 @@ class TechniqueDocs(AttckDocs):
             os.mkdir(self.folder)
         if not os.path.exists(os.path.join(self.folder, 'techniques')):
             os.mkdir(os.path.join(self.folder, 'techniques'))
-        
+
         self.folder = os.path.join(self.folder, 'techniques')
-        
+
 
     def go(self):
         for technique in self._attck.enterprise.techniques:
@@ -140,7 +140,7 @@ class TechniqueDocs(AttckDocs):
                     tactic_list += '''
 * [{name}](../tactics/{id}.md)
     '''.format(name=tactic.name, id=tactic.name.replace(' ', '-').replace('/','-'))
-    
+
             markdown += '''
 # Tactics
 
@@ -158,7 +158,7 @@ class TechniqueDocs(AttckDocs):
                     mitigation_list += '''
 * [{name}](../mitigations/{id}.md)
     '''.format(name=mitigation.name, id=mitigation.name.replace(' ', '-').replace('/','-'))
-    
+
             markdown += '''
 # Mitigations
 
@@ -177,7 +177,7 @@ class TechniqueDocs(AttckDocs):
                     actors_list += '''
 * [{name}](../actors/{id}.md)
     '''.format(name=actor.name, id=actor.name.replace(' ', '-').replace('/','-'))
-    
+
             markdown += '''
 # Actors
 

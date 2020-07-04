@@ -21,15 +21,15 @@ class Enterprise(object):
             4. Actors (Actors or Groups are identified malicious actors/groups which have been identified and documented by MITRE & third-parties)
             5. Tools (Tools are software used to perform techniques)
             6. Malwares (Malwares are specific pieces of malware used by actors (or in general) to accomplish a technique)
-        
+
         You can also search the external dataset for external commands that are similar using the `search_commands` method.
 
            .. code-block:: python
-               
+
                from pyattck import Attck
 
                attck = Attck()
-               
+
                for search in attck.enterprise.search_commands('powershell'):
                    print(search['technique'])
                    print(search['reason_for_match'])
@@ -58,7 +58,7 @@ class Enterprise(object):
         You can retrieve the entire dataset using the `external_dataset` property on a `actor` object.
 
         pyattck also enables you to retrieve or generate logos for the actor or group using the following properties:
-        
+
             - ascii_logo - Generated ASCII logo based on the actor or groups name
             - image_logo - Generated ASCII logo based on a provided logo
 
@@ -123,12 +123,12 @@ class Enterprise(object):
 
         You can retrieve the entire dataset using the `c2_data` property.
 
-    
+
     Example:
         Once an Attck object is instantiated, you can access each object type as a list of objects (e.g. techniques, tactics, actors, etc.)
 
         You can iterate over each object list and access specific properties and relationship properties of each.
-        
+
         The following relationship properties are accessible:
             1. Actors
                 1. Tools used by the Actor or Group
@@ -148,15 +148,15 @@ class Enterprise(object):
             6. Tools
                 1. Techniques that the specified tool is used within
                 2. Actor or Group(s) using a specified tool
-        
+
             1. To iterate over a list, do the following:
 
             .. code-block:: python
-               
+
                from pyattck import Attck
 
                attck = Attck()
-               
+
                for technique in attck.enterprise.techniques:
                    print(technique.id)
                    print(technique.name)
@@ -176,7 +176,7 @@ class Enterprise(object):
                from pyattck import Attck
 
                attck = Attck()
-               
+
                for technique in attck.enterprise.techniques:
                    print(technique.id)
                    print(technique.name)
@@ -208,18 +208,18 @@ class Enterprise(object):
     '''
 
     __ENTERPRISE_GENERATED_DATA_JSON = None
-    
+
     __tactics = None
     __techniques = None
     __mitigations = None
     __actors = None
     __tools = None
     __malwares = None
-    
+
     def __init__(self, attck_json):
         """
         Sets standard properties that are found in all child classes as well as provides standard methods used by inherited classes
-        
+
         Arguments:
             kwargs (dict) -- Takes the MITRE ATT&CK Json object as a kwargs values
         """
@@ -228,7 +228,7 @@ class Enterprise(object):
     @property
     def actors(self):
         """Creates AttckActor objects
-        
+
         Returns:
             (AttckActor) -- (Returns a list of AttckActor objects)
         """
@@ -242,7 +242,7 @@ class Enterprise(object):
     @property
     def tactics(self):
         """Creates AttckTactic objects
-        
+
         Returns:
             (AttckTactic) -- (Returns a list of AttckTactic objects)
         """
@@ -256,7 +256,7 @@ class Enterprise(object):
     @property
     def mitigations(self):
         """Creates AttckMitigation objects
-        
+
         Returns:
             (AttckMitigation) -- (Returns a list of AttckMitigation objects)
         """
@@ -270,7 +270,7 @@ class Enterprise(object):
     @property
     def tools(self):
         """Creates AttckTools objects
-        
+
         Returns:
             (AttckTools) -- Returns a list of AttckTools objects
         """
@@ -284,7 +284,7 @@ class Enterprise(object):
     @property
     def malwares(self):
         """Creates AttckMalware objects
-        
+
         Returns:
             (AttckMalware) -- Returns a list of AttckMalware objects
         """
@@ -298,7 +298,7 @@ class Enterprise(object):
     @property
     def techniques(self):
         """Creates AttckTechnique objects
-        
+
         Returns:
             (AttckTechnique) -- Returns a list of AttckTechnique objects
         """
@@ -311,10 +311,10 @@ class Enterprise(object):
 
     def search_commands(self, search_term):
         """Search external datasets for potential commands using a search term  
-        
+
         Args:
             search_term (str): A command to search for close matches against all external datasets containing potential commands
-        
+
         Returns:
             list: A list of dictionaries containing the technique and the reason for a close match
         """        

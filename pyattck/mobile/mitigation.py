@@ -5,17 +5,17 @@ class MobileAttckMitigation(MobileAttckObject):
     '''A child class of MobileAttckObject
 
        Creates objects which have been categorized as potential mitigations
-    
+
     Example:
         You can iterate over a `mitigations` list and access specific properties and relationship properties.
 
         The following relationship properties are accessible:
                 1. techniques
-        
+
             1. To iterate over an `mitigations` list, do the following:
 
             .. code-block:: python
-               
+
                from pyattck import Attck
 
                attck = Attck()
@@ -50,7 +50,7 @@ class MobileAttckMitigation(MobileAttckObject):
         """
         Creates an MobileAttckMitigation object.  
         The MobileAttckMitigation object is considered a list of mitigations to threats based on the MITRE Mobile ATT&CK Framework
-        
+
         Arguments:
             mobile_attck_obj (json) -- Takes the raw MITRE Mobile ATT&CK Json object
             AttckObject (dict) -- Takes the MITRE Mobile ATT&CK Json object as a kwargs values
@@ -64,7 +64,7 @@ class MobileAttckMitigation(MobileAttckObject):
         self.version = self._set_attribute(kwargs, 'x_mitre_version')
         self.stix = self._set_attribute(kwargs, 'id')
         self.wiki = self._set_wiki(kwargs)
-        
+
         self.set_relationships(self.__mobile_attck_obj)
 
     @property
@@ -81,7 +81,7 @@ class MobileAttckMitigation(MobileAttckObject):
             if 'type' in item:
                 if item['type'] == 'attack-pattern':
                     item_dict[item['id']] = item
-        
+
         for item in self._RELATIONSHIPS[self.stix]:
             if item in item_dict:
                 return_list.append(MobileAttckTechnique(**item_dict[item]))

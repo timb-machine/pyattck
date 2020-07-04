@@ -19,7 +19,7 @@ This class provides access to the MITRE Enterprise, PRE-ATT&CK, and Mobile Frame
 
 ```eval_rst
 .. toctree::
-   
+
    configuration
    datasets
 ```

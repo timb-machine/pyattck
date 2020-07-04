@@ -11,9 +11,9 @@ class ActorDocs(AttckDocs):
             os.mkdir(self.folder)
         if not os.path.exists(os.path.join(self.folder, 'actors')):
             os.mkdir(os.path.join(self.folder, 'actors'))
-        
+
         self.folder = os.path.join(self.folder, 'actors')
-        
+
 
     def go(self):
         for actor in self._attck.enterprise.actors:
@@ -103,7 +103,7 @@ class ActorDocs(AttckDocs):
                     technique_list += '''
 * [{name}](../techniques/{id}.md)
     '''.format(name=technique.name, id=technique.name.replace(' ', '-').replace('/','-'))
-            
+
             markdown += '''
 # Techniques
 
@@ -122,7 +122,7 @@ class ActorDocs(AttckDocs):
                     malware_list += '''
 * [{name}](../malwares/{id}.md)
     '''.format(name=malware.name, id=malware.name.replace(' ', '-').replace('/','-'))
-            
+
             markdown += '''
 # Malwares
 
@@ -140,7 +140,7 @@ class ActorDocs(AttckDocs):
                     tools_list += '''
 * [{name}](../tools/{id}.md)
     '''.format(name=tool.name, id=tool.name.replace(' ', '-').replace('/','-'))
-            
+
             markdown += '''
 # Tools
 

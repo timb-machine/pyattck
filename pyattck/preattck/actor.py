@@ -7,7 +7,7 @@ from ..datasets import AttckDatasets
 class PreAttckActor(PreAttckObject):
 
     '''A child class of PreAttckObject
-    
+
     Creates objects that are categorized as MITRE PRE-ATT&CK Actors or Groups (e.g. APT1, APT32, etc.)
 
     You can also access external data properties. The following properties are generated using external data:
@@ -23,20 +23,20 @@ class PreAttckActor(PreAttckObject):
     You can retrieve the entire dataset using the `external_dataset` property.
 
     pyattck also enables you to retrieve or generate logos for the actor or group using the following properties:
-        
+
         - ascii_logo - Generated ASCII logo based on the actor or groups name
-    
+
     Example:
         You can iterate over an `actors` list and access specific properties and relationship properties.
 
         The following relationship properties are accessible:
-                
+
                 1. techniques
-        
+
             1. To iterate over an `actors` list, do the following:
 
             .. code-block:: python
-               
+
                from pyattck import Attck
 
                attck = Attck()
@@ -90,12 +90,12 @@ class PreAttckActor(PreAttckObject):
         self.stix = self._set_attribute(kwargs, 'id')
         self.contributor = self._set_list_items(kwargs, 'x_mitre_contributors')
         self.wiki = self._set_wiki(kwargs)
-        
+
         self.set_relationships(self.__preattck_obj)
 
         logo = Logo(self.name.strip().replace(' ','_').lower())
         self.ascii_logo = logo.get_ascii()
-        
+
         if PreAttckActor.__PREATTCK_DATASETS is None:
             try:
                 data = AttckDatasets().generated_attck_data()
@@ -103,9 +103,9 @@ class PreAttckActor(PreAttckObject):
                     PreAttckActor.__PREATTCK_DATASETS = data['actors']
             except:
                 raise GeneratedDatasetException('Unable to retrieve generated attack data properties')
-            
+
         self.external_dataset = self.__get_actors_dataset()
-        
+
 
     def __get_actors_dataset(self):
         return_list = []
@@ -206,7 +206,7 @@ class PreAttckActor(PreAttckObject):
             if 'type' in item:
                 if item['type'] == 'attack-pattern':
                     item_dict[item['id']] = item
-        
+
         for item in self._RELATIONSHIPS[self.stix]:
             if item in item_dict:
                 return_list.append(PreAttckTechnique(**item_dict[item]))

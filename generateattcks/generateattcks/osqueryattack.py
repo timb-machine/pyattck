@@ -19,7 +19,7 @@ class OsqueryAttack(GitHubController):
     """
 
     __URL = 'https://raw.githubusercontent.com/teoseller/osquery-attck/master/{}'
-    
+
     __REPO = 'teoseller/osquery-attck'
 
     def __init__(self):
@@ -60,5 +60,5 @@ class OsqueryAttack(GitHubController):
                         for k,v in val.items():
                             if 'query' in k:
                                 template.add_possible_queries('Osquery ATT&CK',v,name=description)
-                            
+
         return template.get()

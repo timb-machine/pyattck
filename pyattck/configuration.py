@@ -7,13 +7,13 @@ class Configuration(object):
     """
     This class will set and get a config.yml file which contains the location of data json files
     used by pyattck.
-    
+
     Returns:
         Configuration: Will return a Configuration instance
     """
 
     __CONFIG_FILE = os.path.join(os.path.expanduser('~'), 'pyattck', 'config' + '.yml')
-    
+
     def __init__(self):
         self.enterprise_attck_json_path = None
         self.preatack_json_path = None
@@ -22,7 +22,7 @@ class Configuration(object):
 
     def get(self):
         """Calling the get method will return configuration settings within the config.yml file
-        
+
         Returns:
             dict: A dictionary containing configuration settings
         """        
@@ -42,7 +42,7 @@ class Configuration(object):
         """This method will set pyattcks configuration file settings.
 
         If no config.yml is found, it will generate one with default settings
-        
+
         Args:
             enterprise_attck_json_path (str, optional): Path to store the Enterprise MITRE ATT&CK JSON data file. Defaults to None.
             preattck_json_path (str, optional): Path to store the MITRE PRE-ATT&CK JSON data file. Defaults to None.
@@ -58,7 +58,7 @@ class Configuration(object):
         else:
             config['enterprise_attck_json'] = os.path.join(os.path.expanduser('~'), 'pyattck', 'enterprise_attck' + '.json')
 
-        
+
         if preattck_json_path:
             if '.json' not in preattck_json_path:
                 config['preattck_json'] = '{}/preattack.json'.format(self.__get_absolute_path(preattck_json_path))
@@ -66,7 +66,7 @@ class Configuration(object):
                 config['preattck_json'] = self.__get_absolute_path(preattck_json_path)
         else:
             config['preattck_json'] = os.path.join(os.path.expanduser('~'), 'pyattck', 'preattck' + '.json')
-        
+
 
         if mobile_attck_json_path:
             if '.json' not in mobile_attck_json_path:
@@ -85,7 +85,7 @@ class Configuration(object):
         else:
             config['enterprise_attck_dataset'] = os.path.join(os.path.expanduser('~'), 'pyattck', 'enterprise_attck_dataset' + '.json')
 
-    
+
         self.__write_config(config)
 
     def __get_absolute_path(self, value):

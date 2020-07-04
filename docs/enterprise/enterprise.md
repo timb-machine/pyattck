@@ -225,7 +225,7 @@ for tool in attack.enterprise.tools:
 
 ```eval_rst
 .. toctree::
-   
+
    actor
    malware
    mitigation

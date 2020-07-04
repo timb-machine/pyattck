@@ -2,22 +2,22 @@ from .mobileattckobject import MobileAttckObject
 
 
 class MobileAttckTactic(MobileAttckObject):
-    
+
     '''A child class of MobileAttckObject
-    
+
         Creates objects that are categorized as MITRE Mobile ATT&CK Tactics
-    
+
         Example:
-        
+
             You can iterate over an `tactics` list and access specific properties and relationship properties.
 
             The following relationship properties are accessible:
                     1. techniques
-        
+
             1. To iterate over an `tactics` list, do the following:
 
             .. code-block:: python
-               
+
                from pyattck import Attck
 
                attck = Attck()
@@ -62,13 +62,13 @@ class MobileAttckTactic(MobileAttckObject):
         """
         super(MobileAttckTactic, self).__init__(**kwargs)
         self.__mobile_attck_obj = mobile_attck_obj
-   
+
         self.created_by_ref = self._set_attribute(kwargs, 'created_by_ref')
         self.short_name = self._set_attribute(kwargs, 'x_mitre_shortname')
         self.external_reference = self._set_reference(kwargs)
         self.stix = self._set_attribute(kwargs, 'id')
         self.wiki = self._set_wiki(kwargs)
-        
+
         self.set_relationships(self.__mobile_attck_obj)
 
     @property

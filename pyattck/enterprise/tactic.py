@@ -4,20 +4,20 @@ from .attckobject import AttckObject
 class AttckTactic(AttckObject):
 
     '''A child class of AttckObject
-    
+
         Creates objects that are categorized as Mitre ATT&CK Tactics
-    
+
         Example:
-        
+
             You can iterate over an `tactics` list and access specific properties and relationship properties.
 
             The following relationship properties are accessible:
                     1. techniques
-        
+
             1. To iterate over an `tactics` list, do the following:
 
             .. code-block:: python
-               
+
                from pyattck import Attck
 
                attck = Attck()
@@ -53,7 +53,7 @@ class AttckTactic(AttckObject):
             attck_obj (json) -- Takes the raw Mitre ATT&CK Json object
             AttckObject (dict) -- Takes the Mitre ATT&CK Json object as a kwargs values
         '''
-    
+
     def __init__(self, attck_obj = None, **kwargs):
         """This class represents a Tactic as defined with the Enterprise MITRE ATT&CK framework.
 

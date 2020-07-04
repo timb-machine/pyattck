@@ -20,7 +20,7 @@ class AtomicThreatCoverage(GitHubController):
 
     This class is a wrapper for the above data set
     """
-    
+
     __URL = 'https://raw.githubusercontent.com/atc-project/atomic-threat-coverage/master/{}'
     __REPO = 'atc-project/atomic-threat-coverage'
 

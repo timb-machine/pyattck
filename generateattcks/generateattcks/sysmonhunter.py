@@ -11,7 +11,7 @@ class SysmonHunter(object):
 
     This class is a wrapper for the above data set
     """
-    
+
     __URL = 'https://raw.githubusercontent.com/baronpan/SysmonHunter/master/misc/attck.yaml'
 
     def __get_data(self):

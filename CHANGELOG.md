@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 # [2.0.4] - 2020-05-15
 
     - Updated pendulum requirements version to have max version
-    
+
 # [2.0.3] - 2020-05-15 
 
     - Updating pendulum requirements version
@@ -28,7 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - Fixed issue with pre-attack and mobile attack technique id mappings
 
 ## [2.0.0] - 2020-02-14
-    
+
     - Major update which includes external datasets to add additional context to MITRE ATT&CK
     - Restructured and created enterprise object type for future expansion into other MITRE ATT&CK Frameworks
     - Improved access and speed when accessing relationship objects
@@ -47,5 +47,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - Updating Documentation with new reference links
 
 ## [1.0.0] 
-    
+
     - Initial release of pyattck to PyPi

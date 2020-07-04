@@ -12,7 +12,7 @@ class AtomicRedTeam(GitHubController):
 
     This class is a wrapper for the above data set
     """
-    
+
     __RAW_URL = 'https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/{}'
     __REPO = 'redcanaryco/atomic-red-team'
 
@@ -34,9 +34,9 @@ class AtomicRedTeam(GitHubController):
                     if 'atomics/' in file_content.path:
                         content = self.__download_raw_content(self.__RAW_URL.format(file_content.path))
                         return_list.append(self.__parse_yaml_content(content, file_content.path))
-        
+
         return return_list
-                        
+
     def __parse_yaml_content(self, content, url):
         template = AttackTemplate()
        # print(content)
@@ -64,7 +64,7 @@ class AtomicRedTeam(GitHubController):
         template.id = content['attack_technique']
         template.add_dataset('Atomic Red Team Test - {name}'.format(name=content['display_name']), content)
         return template.get()      
-        
+
 
     def __download_raw_content(self, url):
         response = self.session.get(url)

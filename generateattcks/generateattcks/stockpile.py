@@ -12,7 +12,7 @@ class MitreStockpile(GitHubController):
 
     This class is a wrapper for the above data set
     """
-    
+
     __RAW_URL = 'https://raw.githubusercontent.com/mitre/stockpile/master/{}'
     __REPO = 'mitre/stockpile'
 
@@ -84,10 +84,10 @@ class MitreStockpile(GitHubController):
                                             })
                                             path['phases'][key].remove(i)
                     return_list.append(path)
-        
+
         self.attack_paths = return_list
 
-                        
+
     def __parse_yaml_content(self, content, url):
         if isinstance(content, list):
             template = AttackTemplate()
@@ -100,8 +100,8 @@ class MitreStockpile(GitHubController):
             if content:
                 if 'phases' in content:
                     self.__temp_attack_paths.append(content)
-               
-           
+
+
     def __download_raw_content(self, url):
         response = self.session.get(url)
         if response.status_code == 200:

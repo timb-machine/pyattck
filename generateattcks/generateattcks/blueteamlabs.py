@@ -12,7 +12,7 @@ class BlueTeamLabs(GitHubController):
 
     This class is a wrapper for the above data set
     """
-    
+
     __URL = 'https://raw.githubusercontent.com/BlueTeamLabs/sentinel-attack/master/{}'
     __REPO = 'BlueTeamLabs/sentinel-attack'
 
@@ -41,7 +41,7 @@ class BlueTeamLabs(GitHubController):
                         template.add_possible_queries('Azure Sentinel',content, name=query_name)
                         return_list.append(template.get())
         return return_list
-           
+
     def __download_raw_content(self, url):
         response = self.session.get(url)
         if response.status_code == 200:

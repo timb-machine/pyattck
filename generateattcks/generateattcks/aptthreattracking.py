@@ -41,7 +41,7 @@ class APTThreatTracking(object):
                 data = response.text
                 return_list.append(self._parse(key,data))
         return return_list
-        
+
     def _parse(self, sheet_name, data):
         count = 0
         headers = None
@@ -64,7 +64,7 @@ class APTThreatTracking(object):
                     continue
                 c2_dict = dict(zip(headers, item))
                 dict_list.append(c2_dict)
-        
+
         if sheet_name == 'israel':
             return { 'israel': self.__parse_data(dict_list) }
         elif sheet_name == 'iran':
@@ -85,7 +85,7 @@ class APTThreatTracking(object):
             return { 'other': self.__parse_data(dict_list) }
         elif sheet_name == 'unknown':
             return { 'unknown': self.__parse_data(dict_list) }
-        
+
 
     def __parse_malware_tool_data(self, dict_list):
         tool_names = []
@@ -152,7 +152,7 @@ class APTThreatTracking(object):
                         tools.append(val)
                 elif 'comment' in key.lower() and val:
                     comment = val
-            
+
             if actor_names or target or operations or description or tools or links or attck_id or comment:
                 template.add_actor_data(
                     actor_names,

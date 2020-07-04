@@ -47,7 +47,7 @@ class ThreatHuntingTables(object):
                     template.add_command('Threat Hunting Tables',item['registry_path'],name='registry_path')
                 if item['registry_value']:
                     template.add_command('Threat Hunting Tables',item['registry_value'], name='registry_value')
-                
+
                 if item['loaded_dll']:
                     template.add_command('Threat Hunting Tables',item['loaded_dll'], name='loaded_dll')
                 if item['sub_process_1']:

@@ -95,8 +95,8 @@ class ThreatHuntingBook(GitHubController):
                         template.id = line.strip('# ').split('-')[0].strip()
                         break
         return (self._parse_code_blocks(content, template)).get()
-    
-        
+
+
     def __download_raw_content(self, url):
         response = self.session.get(url.encode('utf-8'))
         if response.status_code == 200:

@@ -16,14 +16,14 @@ class AdversaryEmulation(object):
     URL = 'https://attack.mitre.org/docs/APT3_Adversary_Emulation_Field_Manual.xlsx'
 
     OFFSET = 2
-    
+
     def _parse(self, sheet):
         header_row = sheet.row(1)
 
         columns = []
         for item in header_row:
             columns.append(str(item).split(':')[1].replace("'","").lstrip('u'))
-    
+
         rows = []
         for i, row in enumerate(range(sheet.nrows)):
             if i <= self.OFFSET:
@@ -45,7 +45,7 @@ class AdversaryEmulation(object):
                         for key, val in item.items():
                             if 'Category' != key:
                                 new_dict[key] = val
-                        
+
                         rows.append(new_dict)
                     rows.remove(item)
         return rows
@@ -62,7 +62,7 @@ class AdversaryEmulation(object):
                 template.add_command(self.URL, item['Cobalt Strike'],name='Cobalt Strike')
             if item['Metasploit']:
                 template.add_command(self.URL, item['Metasploit'],name='Metasploit')
-                
+
             template.add_dataset('Mitre APT3 Adversary Emulation Field Manual', item)
             return_list.append(template.get())
         return return_list

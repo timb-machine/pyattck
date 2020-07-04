@@ -42,11 +42,11 @@ class AttckDatasets(object):
 
     def mitre(self, type='enterprise', force=False):
         """Downloads, saves, or retrieves MITRE ATT&CK Framework JSON files
-        
+
         Args:
             type (str, optional): Will set the type of data to download/retrieve.  Defaults to Enterprise.  Options are enterprise, preattack, & mobile
             force (bool, optional): Will force the download of a new JSON file. Defaults to False.
-        
+
         Returns:
             [dict]: Mitre ATT&CK Enterprise Framework JSON
         """        
@@ -67,10 +67,10 @@ class AttckDatasets(object):
 
     def generated_attck_data(self, force=False):
         """Downloads, saves, or retrieves the Mitre ATT&CK Enterprise Generated Dataset JSON
-        
+
         Args:
             force (bool, optional): Will force the download of a new Generated Datset JSON file. Defaults to False.
-        
+
         Returns:
             [dict]: Mitre ATT&CK Enterprise Generated Dataset JSON
         """

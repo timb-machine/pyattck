@@ -5,9 +5,9 @@ from ..utils.exceptions import GeneratedDatasetException
 
 class MobileAttckTechnique(MobileAttckObject):
     '''A child class of MobileAttckObject
-    
+
     Creates objects which have been categorized as a technique used by attackers
-    
+
     Each technique enables you to access the following properties on the object:
 
         1. command_list - A list of commands associated with a technique
@@ -24,11 +24,11 @@ class MobileAttckTechnique(MobileAttckObject):
                 1. tactics
                 2. mitigations
                 3. actors
-        
+
             1. To iterate over an `techniques` list, do the following:
 
             .. code-block:: python
-               
+
                from pyattck import Attck
 
                attck = Attck()
@@ -68,7 +68,7 @@ class MobileAttckTechnique(MobileAttckObject):
         """
         Creates an MobileAttckTechnique object.  
         The MobileAttckTechnique object is a technique used by attackers.
-        
+
         Arguments:
             attck_obj (json) -- Takes the raw MITRE Mobile ATT&CK Json object
             AttckObject (dict) -- Takes the MITRE Mobile ATT&CK Json object as a kwargs values
@@ -87,7 +87,7 @@ class MobileAttckTechnique(MobileAttckObject):
         self.possible_detections = self._set_attribute(kwargs, 'x_mitre_detection')
         self.revoked = self._set_attribute(kwargs, 'revoked')
         self.wiki = self._set_wiki(kwargs)
-        
+
         self.stix = self._set_attribute(kwargs, 'id')
 
         if MobileAttckTechnique.__ATTCK_DATASETS is None:
@@ -126,15 +126,15 @@ class MobileAttckTechnique(MobileAttckObject):
                     if str(tact).lower() == str(item['x_mitre_shortname']).lower():
                         tactic_list.append(MobileAttckTactic(**item))
         return tactic_list
-            
+
 
     @tactics.setter
     def tactics(self, obj):
         """Sets the associated tactic/phase this technique is in
-        
+
         Arguments:
             obj (dict) -- A Mitre ATT&CK Framework json object
-        
+
         Returns:
             (string) -- Returns a string that sets the tactic/phase this technique is in. 
                         If there is no phase found, it will return 'no phase_name'
@@ -147,7 +147,7 @@ class MobileAttckTechnique(MobileAttckObject):
             self._tactic = temp_list
         except:
             self._tactic = ['no phase_name']
-        
+
 
     @property
     def mitigations(self):

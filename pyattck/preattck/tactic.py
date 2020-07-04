@@ -2,22 +2,22 @@ from .preattckobject import PreAttckObject
 
 
 class PreAttckTactic(PreAttckObject):
-    
+
     '''A child class of PreAttckObject
-    
+
         Creates objects that are categorized as MITRE PRE-ATT&CK Tactics
-    
+
         Example:
-        
+
             You can iterate over an `tactics` list and access specific properties and relationship properties.
 
             The following relationship properties are accessible:
                     1. techniques
-        
+
             1. To iterate over an `tactics` list, do the following:
 
             .. code-block:: python
-               
+
                from pyattck import Attck
 
                attck = Attck()

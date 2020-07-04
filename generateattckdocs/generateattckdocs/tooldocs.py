@@ -61,9 +61,9 @@ class ToolDocs(AttckDocs):
             os.mkdir(self.folder)
         if not os.path.exists(os.path.join(self.folder, 'tools')):
             os.mkdir(os.path.join(self.folder, 'tools'))
-        
+
         self.folder = os.path.join(self.folder, 'tools')
-        
+
 
     def add_c2_markdown_attributes(self, object, name):
         property_val = None
@@ -79,7 +79,7 @@ class ToolDocs(AttckDocs):
                         property_list_val += '''
 * {prop_name}: {prop_val}
 '''.format(prop_name=attribute, prop_val=getattr(object, '{}'.format(attribute)))
-        
+
         if property_list_val:
             property_val = '''
 # {name}
@@ -106,7 +106,7 @@ class ToolDocs(AttckDocs):
         for tool in self._attck.enterprise.tools:
             markdown = None
             command_list = None
-    
+
             additional_names = self.add_markdown_section(tool, 'Additional Names', 'additional_names')
             attribution_links = self.add_markdown_section(tool, 'Attribution Links', 'attribution_links')
             family = self.add_markdown_section(tool, 'Family', 'family')
@@ -121,7 +121,7 @@ class ToolDocs(AttckDocs):
                 if getattr(tool, 'c2_data', None):
                     c2_data = json.dumps(tool.c2_data)
                     c2_properties = self.add_c2_markdown_attributes(tool,'C2 Matrix Properties')
-   
+
             markdown = '''
 # {name}
 
@@ -178,7 +178,7 @@ class ToolDocs(AttckDocs):
                     technique_List += '''
 * [{name}](../techniques/{id}.md)
     '''.format(name=technique.name, id=technique.name.replace(' ', '-').replace('/','-'))
-    
+
             markdown += '''
 # Techniques
 
@@ -196,7 +196,7 @@ class ToolDocs(AttckDocs):
                     actors_list += '''
 * [{name}](../actors/{id}.md)
     '''.format(name=actor.name, id=actor.name.replace(' ', '-').replace('/','-'))
-    
+
             markdown += '''
 # Actors
 

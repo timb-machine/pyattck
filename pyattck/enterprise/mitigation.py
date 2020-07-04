@@ -5,17 +5,17 @@ class AttckMitigation(AttckObject):
     '''A child class of AttckObject
 
        Creates objects which have been categorized as potential mitigations
-    
+
     Example:
         You can iterate over a `mitigations` list and access specific properties and relationship properties.
 
         The following relationship properties are accessible:
                 1. techniques
-        
+
             1. To iterate over an `mitigations` list, do the following:
 
             .. code-block:: python
-               
+
                from pyattck import Attck
 
                attck = Attck()
@@ -58,7 +58,7 @@ class AttckMitigation(AttckObject):
         """
         super(AttckMitigation, self).__init__(**kwargs)
         self.__attck_obj = attck_obj
-        
+
         self.created_by_ref = self._set_attribute(kwargs, 'created_by_ref')
         self.id = self._set_id(kwargs)
         self.name = self._set_attribute(kwargs, 'name')
@@ -87,7 +87,7 @@ class AttckMitigation(AttckObject):
             if 'type' in item:
                 if item['type'] == 'attack-pattern':
                     item_dict[item['id']] = item
-        
+
         for item in self._RELATIONSHIPS[self.stix]:
             if item in item_dict:
                 return_list.append(AttckTechnique(**item_dict[item]))

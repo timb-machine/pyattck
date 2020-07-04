@@ -29,15 +29,15 @@ class PreAttck(object):
         You can retrieve the entire dataset using the `external_dataset` property on a `actor` object.
 
         pyattck also enables you to retrieve or generate logos for the actor or group using the following properties:
-        
+
             - ascii_logo - Generated ASCII logo based on the actor or groups name
 
-    
+
     Example:
         Once an Attck object is instantiated, you can access each object type as a list of objects (e.g. techniques, tactics, actors, etc.)
 
         You can iterate over each object list and access specific properties and relationship properties of each.
-        
+
         The following relationship properties are accessible:
             1. Actors
                 1. Techniques this Actor or Group uses
@@ -46,21 +46,21 @@ class PreAttck(object):
             3. Techniques
                 1. Tactics a technique is found in
                 2. Actor or Group(s) identified as using this technique
-        
+
             1. To iterate over a list, do the following:
 
             .. code-block:: python
-               
+
                from pyattck import Attck
 
                attck = Attck()
-               
+
                for technique in attck.preattack.techniques:
                    print(technique.id)
                    print(technique.name)
                    print(technique.description)
                    # etc.
-               
+
 
             2. To access relationship properties, do the following:
 
@@ -69,7 +69,7 @@ class PreAttck(object):
                from pyattck import Attck
 
                attck = Attck()
-               
+
                for technique in attck.preattack.techniques:
                    print(technique.id)
                    print(technique.name)
@@ -82,14 +82,14 @@ class PreAttck(object):
                        print(actor.description)
                        # etc.
     '''
-    
+
     __tactics = None
     __techniques = None
     __mitigations = None
     __actors = None
     __tools = None
     __malwares = None
-    
+
     def __init__(self, preattck_json):
         """
         Sets standard properties that are found in all child classes as well as provides standard methods used by inherited classes
@@ -105,7 +105,7 @@ class PreAttck(object):
     @property
     def actors(self):
         """Access all actors within the MITRE PRE-ATT&CK Framework
-        
+
         Returns:
             PreAttckActor: Returns a list of PreAttckActor objects
         """
@@ -119,7 +119,7 @@ class PreAttck(object):
     @property
     def tactics(self):
         """Access all tactics within the MITRE PRE-ATT&CK Framework
-        
+
         Returns:
             PreAttckTactic: Returns a list of PreAttckTactic objects
         """
@@ -134,7 +134,7 @@ class PreAttck(object):
     @property
     def techniques(self):
         """Access all techniques within the MITRE PRE-ATT&CK Framework
-                
+
         Returns:
             PreAttckTechnique: Returns a list of PreAttckTechnique objects
         """

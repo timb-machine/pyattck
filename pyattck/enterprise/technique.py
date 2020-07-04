@@ -5,9 +5,9 @@ from ..utils.exceptions import GeneratedDatasetException
 
 class AttckTechnique(AttckObject):
     '''A child class of AttckObject
-    
+
     Creates objects which have been categorized as a technique used by attackers
-    
+
     Each technique enables you to access the following properties on the object:
 
         1. command_list - A list of commands associated with a technique
@@ -24,11 +24,11 @@ class AttckTechnique(AttckObject):
                 1. tactics
                 2. mitigations
                 3. actors
-        
+
             1. To iterate over an `techniques` list, do the following:
 
             .. code-block:: python
-               
+
                from pyattck import Attck
 
                attck = Attck()
@@ -132,15 +132,15 @@ class AttckTechnique(AttckObject):
                     if str(tact).lower() == str(item['x_mitre_shortname']).lower():
                         tactic_list.append(AttckTactic(**item))
         return tactic_list
-            
+
 
     @tactics.setter
     def tactics(self, obj):
         """Sets the associated tactic/phase this technique is in
-        
+
         Arguments:
             obj (dict) -- A MITRE ATT&CK Framework json object
-        
+
         Returns:
             (string) -- Returns a string that sets the tactic/phase this technique is in. 
                         If there is no phase found, it will return 'no phase_name'
@@ -153,7 +153,7 @@ class AttckTechnique(AttckObject):
             self._tactic = temp_list
         except:
             self._tactic = ['no phase_name']
-        
+
 
     @property
     def mitigations(self):

@@ -4,17 +4,17 @@ class MobileAttckObject(object):
     '''Parent class of all other MITRE Mobile ATT&CK based classes
 
     This is a private class and should not be accessed directly
-    
+
     Arguments:
         AttckObject (dict) -- Takes the MITRE Mobile ATT&CK Json object as a kwargs values
     '''
 
     _RELATIONSHIPS = None
-    
+
     def __init__(self, **kwargs):
         """
         Sets standard properties that are found in all child classes as well as provides standard methods used by inherited classes
-        
+
         Arguments:
             kwargs (dict) -- Takes the MITRE Mobile ATT&CK Json object as a kwargs values
         """
@@ -27,7 +27,7 @@ class MobileAttckObject(object):
         self.modified = self._set_attribute(kwargs, 'modified')
         self.stix = self._set_attribute(kwargs, 'id')
         self.type = self._set_attribute(kwargs, 'type')
-        
+
 
     def __str__(self):
         return_dict = {}
@@ -38,7 +38,7 @@ class MobileAttckObject(object):
 
     def set_relationships(self, attck_obj):
         """Generates relationships within attck_obj based on a defined relationship from MITRE ATT&CK
-        
+
         Args:
             attck_obj (dict): MITRE ATT&CK Json object
         """
@@ -60,10 +60,10 @@ class MobileAttckObject(object):
 
     def __set_alias(self, obj):
         """Returns the Mitre ATT&CK Framework aliases
-        
+
         Arguments:
             obj (dict) -- A Mitre ATT&CK Framework json object
-        
+
         Returns:
             (str) -- Returns the Mitre ATT&CK Framework aliases
         """
@@ -75,15 +75,15 @@ class MobileAttckObject(object):
             for item in obj['x_mitre_aliases']:
                 return_list.append(item)
         return return_list
-        
+
     def _set_attribute(self, obj, name):
         """Parent class method to set attribute based on passed in object
            and the name of the property
-        
+
         Arguments:
             obj (dict) -- Provided json objects are passed to this method
             name (str) -- The json property name to set attribute in child classes
-        
+
         Returns:
             (str) -- Returns either the value of the attribute requested or returns 'null'
         """
@@ -96,11 +96,11 @@ class MobileAttckObject(object):
 
     def _set_list_items(self, obj, list_name):
         """Private method used by child classes and normalizes list items
-        
+
         Args:
             obj (dict) -- Provided json objects are passed to this method
             list_name (str) -- The json property name to set list items attribute in child classes
-        
+
         Returns:
             list: returns a list of values from the provided list_name property
         """        
@@ -112,10 +112,10 @@ class MobileAttckObject(object):
 
     def _set_id(self, obj):
         """Returns the MITRE Mobile ATT&CK Framework external ID 
-        
+
         Arguments:
             obj (dict) -- A MITRE Mobile ATT&CK Framework json object
-        
+
         Returns:
             (str) -- Returns the MITRE Mobile ATT&CK Framework external ID
         """
@@ -123,13 +123,13 @@ class MobileAttckObject(object):
             for p in obj['external_references']:
                 if p.get('source_name') == 'mitre-mobile-attack' or p.get('source_name') == 'mitre-attack':
                     return p.get('external_id')
-        
+
     def _set_wiki(self, obj):
         """Returns the MITRE Mobile ATT&CK Framework Wiki URL
-        
+
         Arguments:
             obj (dict) -- A MITRE Mobile ATT&CK Framework json object
-        
+
         Returns:
             (str) -- Returns the MITRE Mobile ATT&CK Framework Wiki URL
         """
@@ -141,10 +141,10 @@ class MobileAttckObject(object):
 
     def _set_reference(self, obj):
         """Returns a list of external references from the provided MITRE Mobile ATT&CK Framework json object
-        
+
         Arguments:
             obj (dict) -- A MITRE Mobile ATT&CK Framework json object
-        
+
         Returns:
             (dict) -- Returns a dict containing the following key/value pairs
                 external_id (str) -- The MITRE Mobile ATT&CK Framework external ID

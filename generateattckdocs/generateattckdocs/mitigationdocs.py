@@ -11,9 +11,9 @@ class MitigationDocs(AttckDocs):
             os.mkdir(self.folder)
         if not os.path.exists(os.path.join(self.folder, 'mitigations')):
             os.mkdir(os.path.join(self.folder, 'mitigations'))
-        
+
         self.folder = os.path.join(self.folder, 'mitigations')
-        
+
 
     def go(self):
         for mitigation in self._attck.enterprise.mitigations:
@@ -41,7 +41,7 @@ class MitigationDocs(AttckDocs):
                     technique_list += '''
 * [{name}](../techniques/{id}.md)
     '''.format(name=technique.name, id=technique.name.replace(' ', '-').replace('/','-'))
-            
+
             markdown += '''
 # Techniques
 

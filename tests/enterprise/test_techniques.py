@@ -3,17 +3,17 @@ import pytest
 
 def test_techniques_have_tactics(attck_fixture):
     """All MITRE Enterprise ATT&CK Techniques should have tactics
-    
+
     Args:
         attck_fixture ([type]): our default MITRE Enterprise ATT&CK JSON fixture
     """
     for technique in attck_fixture.enterprise.techniques:
         if technique.tactics:
             assert getattr(technique,'tactics')
-    
+
 def test_techniques_have_mitigations(attck_fixture):
     """Some MITRE Enterprise ATT&CK Techniques should have mitigations
-    
+
     Args:
         attck_fixture ([type]): our default MITRE Enterprise ATT&CK JSON fixture
     """
@@ -27,7 +27,7 @@ def test_techniques_have_mitigations(attck_fixture):
 
 def test_techniques_have_actors(attck_fixture):
     """All MITRE Enterprise ATT&CK Techniques should have Actors
-    
+
     Args:
         attck_fixture ([type]): our default MITRE Enterprise ATT&CK JSON fixture
     """
@@ -43,7 +43,7 @@ def test_techniques_have_actors(attck_fixture):
 
 def test_some_techniques_have_generated_datasets_properties(attck_fixture):
     """Some MITRE Enterprise ATT&CK Techniques should have generated datasets properties
-    
+
     Args:
         attck_fixture ([type]): our default MITRE Enterprise ATT&CK JSON fixture
     """
@@ -52,7 +52,7 @@ def test_some_techniques_have_generated_datasets_properties(attck_fixture):
     queries_count = 0
     datasets_count = 0
     possible_detections_count = 0
-    
+
     for technique in attck_fixture.enterprise.techniques:
         if hasattr(technique, 'commant_list'):
             command_list_count += 1
@@ -64,7 +64,7 @@ def test_some_techniques_have_generated_datasets_properties(attck_fixture):
             datasets_count += 1
         if hasattr(technique, 'possible_detections'):
             possible_detections_count += 1
-        
+
 
     if command_list_count >= 1 and commands_count >= 1 and queries_count >= 1 and datasets_count >= 1 and possible_detections_count >= 1:
         assert True

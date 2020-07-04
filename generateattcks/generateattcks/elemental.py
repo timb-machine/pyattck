@@ -16,7 +16,7 @@ class ElementalAttack(GitHubController):
 
     This class is a wrapper for the above data set
     """
-    
+
     __RAW_URL = 'https://raw.githubusercontent.com/Elemental-attack/Elemental/master/{}'
     __REPO = 'Elemental-attack/Elemental'
 
